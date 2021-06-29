@@ -48,7 +48,7 @@ FIRE = False
 
 # make sure pointing to correct model - using raks-bubblebeam
 print("[INFO] loading model...")
-MODEL_PATH = "./models/inferno_model.h5"
+MODEL_PATH = "./models/njtest1.h5"
 
 # Experimental CNN - Colab best run
 # MODEL_PATH = "./models/experimentalCNN.h5"
