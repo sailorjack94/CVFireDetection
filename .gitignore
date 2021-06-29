@@ -2,3 +2,4 @@ data/
 logic/
 models/
 notebooks/
+__pychache__/
