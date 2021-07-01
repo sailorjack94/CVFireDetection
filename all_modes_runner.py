@@ -1,6 +1,6 @@
 import sys
 
-sys.path.append("/Users/niall/codeclan_work/final_project/fireDetectCNN")
+sys.path.append("/Users/niall/codeclan_work/final_project/")
 
 from fireDetectCNN import inceptionMap
 import cv2
@@ -15,7 +15,7 @@ if __name__ == '__main__':
     model = construct_inceptionv1onfire (224, 224, training=False)
     # model.load(os.path.join("models/InceptionV4-OnFire", "inceptionv4onfire"),weights_only=True)
     model.load(os.path.join("modelsExperimental/InceptionV1-OnFire", "inceptiononv1onfire"),weights_only=True)  
-    print("Loaded CNN network weights ...")
+    print("[INFO] Loaded CNN network weights ...")
 
     # network input sizes - model layout must match weights pattern
     rows = 224
@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
     # initialise webcam input
     video = cv2.VideoCapture(0)
-    print("Loaded video ...")
+    print("[INFO] Loaded video ...")
 
     # open window
     cv2.namedWindow(windowName, cv2.WINDOW_NORMAL)
@@ -42,7 +42,7 @@ if __name__ == '__main__':
         start_t = cv2.getTickCount()
         ret, frame = video.read()
         if not ret:
-            print("... end of video file reached")
+            print("[INFO] ... end of video file reached")
             break
 
         # re-size image to network input size and perform prediction
