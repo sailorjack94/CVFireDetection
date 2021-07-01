@@ -8,15 +8,14 @@ alarm = False
 
 # video = cv2.VideoCapture("test_fire.mp4")
 # video = cv2.VideoCapture("test_no_fire.mp4")
-video = cv2.VideoCapture("cat.mp4")
-# video = cv2.VideoCapture(0)
+# video = cv2.VideoCapture("cat.mp4")
+video = cv2.VideoCapture(0)
 
 def sound_alarm():
     playsound.playsound("alarm.wav")
 
 
 while True:
-
     ret, frame = video.read()
     frame = cv2.resize(frame, (1000,600)) 
     blur = cv2.GaussianBlur(frame, (15,15), 0)
@@ -51,6 +50,15 @@ while True:
     if cv2.waitKey(10) == 27 :
 
         break
+
+
+    gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+    ret, thresh = cv2.threshold(gray, 200, 255, 0)
+    contours, hierarchy = cv2.findContours(thresh,cv2.RETR_LIST,cv2.CHAIN_APPROX_SIMPLE)[-2:]
+
+    for cnt in contours:
+        x,y,w,h = cv2.boundingRect(cnt)
+        cv2.rectangle(frame,(x,y),(x+w,y+h),(200,0,0),2)
 
     label = "Fire!"
     label2 = "No Fire Detected..."
