@@ -50,6 +50,7 @@ if __name__ == '__main__':
 
         # perform prediction on the image frame which is:
         # - an image (tensor) of dimension 224 x 224 x 3
+        #  Note tensor must be same size as network input requirements. Refer to pixel convulutions.
         # - a 3 channel colour image with channel ordering BGR (not RGB)
         output = model.predict([small_frame])
 
@@ -77,13 +78,3 @@ if __name__ == '__main__':
         elif (key == ord('f')):
             cv2.setWindowProperty(windowName, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 
-
-
-
-
-
-
-
-
-
-# Refactored from [Dunnings / Breckon, 2018],  [Samarth/Bhowmik/Breckon, 2019]
