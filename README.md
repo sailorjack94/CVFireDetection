@@ -1,13 +1,24 @@
 # Real-Time CNN Fire Detection 
-This Capstone Project serves as a chance to build intuitive front-end user interfaces for powerful back-end logic. 
 
-The Application is designed to process live video and detect fire. Using TensorFlow/Keras, a CNN model is built and trained on scrapped datasets with the resultant model being used to provide lightweight, on the fly fire detection.
+This capstone project was designed to explore the potential application of Machine Learning and Neural Networks to problem sets. 
+
+## MVP
+Create an application that can: 
+
+* Stream video from a camera source,
+* Process and prepare raw video/images for ML classification processing,
+* Experiment for pixel mapping for fire dection,
+* Experiment with pure ML classifcation for fire detection, 
+* Raise an audible alarm and visual alarm when a fire is detected,
+* Highlist suspected fire on a live video stream.
 
 
 
 
 
-Credit to the below for various parts of the application - 
+Technologies used: Python, TensorFlow, Keras, Convolutional Neural Networks, OpenCV, Google Colab.
+
+Credit for various snippets of code below - 
 
 https://ieeexplore.ieee.org/document/8978439
 https://www.researchgate.net/publication/336639483_FPGA_Deployable_Fire_Detection_Model_for_Real-Time_Video_Surveillance_Systems_Using_Convolutional_Neural_Networks
