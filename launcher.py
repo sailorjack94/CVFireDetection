@@ -20,24 +20,24 @@ def launchInferno():
 def launchInception():
     os.system('python3 inceptionRunner.py')
 
-heading = Label(gui, text="Select your Application...", bg="white", fg="black")
-heading.pack()
+
+
+heading = Label(gui, text="Select your Application...", bg="white", fg="black", pady=10)
+heading.pack(pady=10)
 
 button0 = ttk.Button(gui, text="CV Colour Detector", command=launchCVDetector)
-button0.pack()
+button0.pack(pady=10)
 # button0.grid(columnspan=3, column=2, row=2, sticky='n', pady=10)
 
-button1=ttk.Button(gui,text="Inferno Fire Detector",command= launchInferno)
-button1.pack()
+button1=ttk.Button(gui,text="Inferno Fire Detector (TensorFlow/Keras - YOLO5)",command= launchInferno)
+button1.pack(pady=10)
 # button1.grid(columnspan=3, column=2, row=3, sticky='n', pady=10)
 
-button2 = ttk.Button(gui, text='InceptionV01 Detector', command=launchInception)
-button2.pack()
+button2 = ttk.Button(gui, text='InceptionV01 Detector(GoogLeNet - Inception)', command=launchInception)
+button2.pack(pady=10)
 # button2.grid(columnspan=3, column=2, row=4, sticky='n', pady=10)
 
-ttk.Button(gui, text="Quit", command=gui.destroy).pack()
-
-
+ttk.Button(gui, text="Quit" ,command=gui.destroy).pack(pady=10)
 
 
 
